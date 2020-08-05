@@ -1,0 +1,118 @@
+.header
+{
+    &.open 
+    {
+        .overlay
+        {
+            display:block;
+            animation: fade-in 300ms ease-in-out forwards;
+            
+        }
+        
+        .header__menu
+        {
+    >span:nth-child(1)
+    {
+    
+        transform : rotate(45deg);
+    }
+    >span:nth-child(2)
+    {
+        opacity:0;
+    }
+    >span:nth-child(3)
+    {
+        transform : rotate(-45deg);
+    }
+    }
+    }
+
+
+    nav
+    {
+    
+        padding: 1.125rem 1.5rem;
+
+    }
+   
+
+    &__menu
+    {
+         > span
+        {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background-color:$darkblue;
+            border-radius: 50px;
+           
+
+            &:not(:last-child)
+            {
+                margin-bottom:5px;
+            }
+            transition : all 200ms ease-in-out;
+
+            transform-origin: 3px 1px;
+            
+
+
+
+        }
+        
+    }
+       
+    &__links
+    {
+    a
+    {
+        position: relative;
+        font-size:$font-sm;
+        color:$bluegrey;
+        &:not(:last-child)
+        {
+            margin-right:30px;
+        }
+        &::before
+        {
+            content: "";
+            display:block;
+            position: absolute;
+            height: 5px;
+            left : 0;
+            right : 0;
+            bottom : -20px;   
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(48,211,104,1) 0%, rgba(43,184,214,1) 100%);
+            opacity: 0;
+            transition: opacity 300ms ease-in-out;
+            border-radius: 20px;
+
+        }
+        &:hover 
+        {
+            transition : color 300ms ease-in-out;
+            color:$bluegrey;
+            color:$darkblue;
+            &::before
+            {
+                opacity : 1;
+            }
+        }
+
+
+    }
+
+}
+.overlay
+{
+    display:none;
+    position:fixed;
+    top: 3.8rem;
+    left: 0;
+    bottom : 0;
+    right : 0;
+    background-color: #2C324A;
+    background: linear-gradient(#2C324A,transparent);
+
+}
+}
