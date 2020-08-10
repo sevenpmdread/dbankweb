@@ -1,13 +1,37 @@
 .header
 {
+
+
+    &__modalmenu
+    {
+        position: absolute;
+        width: calc(100% - 3rem);
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+        background: white;
+        margin-top: 1.5rem;
+        padding: 1.625rem;
+        border-radius: 5px;
+        z-index: 1000;
+      
+        a
+        {
+            display: block;
+  padding: 0.625rem;
+  color: #2d314d;
+  text-align: center;
+
+         
+        }
+
+    }
     &.open 
     {
-        .overlay
-        {
-            display:block;
-            animation: fade-in 300ms ease-in-out forwards;
-            
-        }
+       .overlay
+       {
+           visibility:visible;
+       }
         
         .header__menu
         {
@@ -30,13 +54,17 @@
 
     nav
     {
-    
-        padding: 1.125rem 1.5rem;
+        padding-top:1.0625rem;
+        padding-bottom:1.0625rem;
+        position: relative;
+        background: #FFFFFF;
+        
+        
 
     }
    
 
-    &__menu
+    &__toggle
     {
          > span
         {
@@ -82,8 +110,7 @@
             left : 0;
             right : 0;
             bottom : -20px;   
-            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(48,211,104,1) 0%, rgba(43,184,214,1) 100%);
-            opacity: 0;
+            background: linear-gradient(90deg, rgba(66,0,255,1) 0%, rgba(27,114,255,1) 61%, rgba(0,194,255,1) 100%);            opacity: 0;
             transition: opacity 300ms ease-in-out;
             border-radius: 20px;
 
@@ -105,14 +132,14 @@
 }
 .overlay
 {
-    display:none;
     position:fixed;
-    top: 3.8rem;
+    top: 0;
     left: 0;
     bottom : 0;
     right : 0;
-    background-color: #2C324A;
-    background: linear-gradient(#2C324A,transparent);
+    background-color: #1B72FF;
+    background: linear-gradient(#1B72FF,transparent);
 
 }
+
 }

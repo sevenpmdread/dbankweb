@@ -1,0 +1,113 @@
+.hero
+{
+
+    background-color: $lgrey;
+    .container {
+        
+    
+    @include breakpoint-up(large)
+    {
+        display:flex;
+        align-items: center;
+        flex:1;
+
+    }
+        
+    }
+        
+    &__image
+    {
+      
+       position: relative;
+      
+       background: url(/images/bg-intro-mobile.svg);
+
+      
+       background-size: cover;
+       background-repeat:no-repeat;
+       background-position:center center;
+       min-height: 18.5rem;
+       @include breakpoint-up(medium)
+       {
+           min-height: 34rem;
+       }
+       
+        @include breakpoint-up(large)
+        {
+        flex:3;
+        order:2;
+            background-image: none;
+        height:41rem;
+        background-position: center center;
+       
+       }
+
+    
+    &::before
+    {
+        
+     content: "";
+     position:absolute;
+     display: block;
+     height:100%;
+    
+     
+     
+     background-repeat:no-repeat;
+    
+     @include breakpoint-up(large)
+     {
+        background: url(/images/desktophero.png);
+        width: 175%;
+        background-size: 121%;
+        background-position: 32% 86%;
+        
+     
+        
+        
+        
+     }
+    }
+    
+       &::after
+       {
+           
+        content: "";
+        position:absolute;
+        display: block;
+        height:100%;
+        width:100%;
+        background: url(/images/claymockups.png);
+     
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: 50% 95%;
+        @include breakpoint-up(large)
+        {
+            width: 153%;
+            height: 132%;
+            background-position: 94% 252%;
+        }
+       
+       }
+
+    }
+
+    &__text
+    {
+        @include breakpoint-up(large)
+    {
+        flex:3;
+        order:1;
+        text-align: left;
+    }
+        text-align: center;
+        
+     
+       
+    }
+
+  
+
+
+}

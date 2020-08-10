@@ -8,10 +8,20 @@ html
 {
     box-sizing:inherit;
 }
-
-a, a:visited, a:hover
+a, a:visited
 {
     text-decoration: none;
+    box-shadow: none;
+    color:#4200ff;
+    
+
+
+}
+ a:hover
+{
+    text-decoration: none;
+    box-shadow: none;
+  color: white;
 
 
 }
@@ -19,12 +29,67 @@ body
 {
     margin:0;
     padding:0;
-    font-family: 'Public Sans', sans-serif ;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.3;
-    color: $lgrey;
+    color: #51535f;
     font-weight: 300;
     font-size: $font-md;
+    overflow-x: hidden;
+
+    
 }
+h1,h2,h3
+{
+    margin-top: 0px;
+
+    line-height: 1.15;
+
+    font-weight:300;
+    color:$darkblue;
+
+}
+
+h1
+{
+    font-size:2.31rem;
+    font-weight:500;
+    margin-bottom: 1.5rem;
+            @include breakpoint-up(medium)
+            {
+                margin-bottom:2.0rem;
+                font-size: 3.17rem;
+            }
+           
+}
+p
+{
+    line-height: 1.8rem;
+    color:$bluegrey;
+    margin-bottom:2.25rem;
+    font-size: 131%
+}
+
+h2
+{        
+    font-size: 1.875rem;
+    font-weight: 400;
+    margin-bottom: 1.5625rem;
+   // margin-top:2rem;
+
+    @include breakpoint-up(large)
+                {
+                    font-size: 2.5rem;
+                    margin-bottom:2.25rem;
+                    
+                }
+          
+           
+
+}
+.noscroll
+    {
+        overflow: hidden;
+    }
 
 .flex
 {
@@ -48,21 +113,21 @@ button, .button
 {
     padding: 0.875rem 2.4375rem;
     border-radius: 50px;
-    color:$white;
-    background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(48,211,104,1) 0%, rgba(43,184,214,1) 100%);
-cursor: pointer;
-border: 0;
-font-weight:500;
-opacity : 1;
-transition: opacity 300ms ease-in-out;
-
+  
+    color: black;
+    font-weight: 400;
+    box-shadow: 0 0 6px 0 rgba(48, 48, 48, 0.5);
+    border: solid 3px transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #4200ff, #00c2ff);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 2px 1000px 1px #fff inset;
 
 }
 
-button:hover
-{
-    opacity:0.75;
+button.button:hover {
+  box-shadow: none;
+  color: white;
 }
 
 .hide-for-mobile
@@ -73,6 +138,76 @@ button:hover
     }
 
 }
+.container
+    {
+        position: relative;
+            max-width: 69.375rem;
+            margin: 0 auto;
+            &--pall
+            {
+                    padding-left:1.125rem;
+                    padding-right:1.125rem;
+                    padding-top: 4.375rem;
+                    padding-bottom: 4.375rem;
+                    @include breakpoint-up(large)
+                    {
+                        padding-top: 6.0rem;
+                        padding-bottom: 6.0rem;
+                    }
+
+            }
+            &--px
+            {
+                padding-left:1.125rem;
+                padding-right:1.125rem;
+
+            }
+
+            &--py
+            {
+                @include breakpoint-up(large)
+                {
+                    padding-top: 6.0rem;
+                    padding-bottom: 6.0rem;
+                }
+                
+                padding-top: 4.375rem;
+                padding-bottom: 4.375rem;
+
+            }
+            &--pt
+            {
+                @include breakpoint-up(large)
+                {
+                    padding-top: 6.0rem;
+                   
+                }
+                padding-top: 4.375rem;
+
+            }
+            &--pb
+            {
+                @include breakpoint-up(large)
+                {
+                 
+                    padding-bottom: 6.0rem;
+                }
+                padding-bottom: 4.375rem;
+
+            }
+            &--pl
+            {
+                padding-left:1.125rem;
+
+            }
+            &--pr
+            {
+                padding-right:1.125rem;
+
+            }
+    
+
+    }
 
 .hide-for-desktop
 {
@@ -82,8 +217,3 @@ button:hover
     }
 }
 
-.overlay
-{
-    background:$darkblue;
-background: linear-gradient($darkblue,transparent);
-}
